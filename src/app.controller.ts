@@ -57,6 +57,6 @@ export class AppController {
     if (ad === null || ad === undefined) {
       return response.status(404).json({ discord: '' });
     }
-    return response.status(200).json({ discord: ad });
+    return response.status(200).json({ discord: ad.discord });
   }
 }

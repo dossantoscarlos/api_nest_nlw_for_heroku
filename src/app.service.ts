@@ -108,6 +108,7 @@ export class AppService {
         id,
       },
     });
-    return ad.discord;
+
+    return ad;
   }
 }
