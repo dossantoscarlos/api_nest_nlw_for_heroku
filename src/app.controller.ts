@@ -43,7 +43,7 @@ export class AppController {
     const gameId = id;
     const ad = await this.appService.getListAds(gameId);
     console.log(ad);
-    if (ad === null || ad.length === 0) {
+    if (ad.length === 0) {
       return response.status(404).json({ message: 'Not Found' });
     }
     return response.status(200).json(ad);
@@ -54,10 +54,9 @@ export class AppController {
     const discord = id;
     const ad = await this.appService.listDiscord(discord);
 
-    if (ad === null) {
-      return response.status(404).json({ message: 'Not Found' });
+    if (ad === null || ad === undefined) {
+      return response.status(404).json({ discord: '' });
     }
-
-    return response.status(200).json(ad);
+    return response.status(200).json({ discord: ad });
   }
 }

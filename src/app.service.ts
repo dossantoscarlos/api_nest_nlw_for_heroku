@@ -78,6 +78,7 @@ export class AppService {
 
     return ad.map(
       (arr: {
+        id: string;
         name: any;
         useVoiceChannel: any;
         yearsPlaying: any;
@@ -86,6 +87,7 @@ export class AppService {
         hourEnd: number;
       }) => {
         return {
+          id: arr.id,
           name: arr.name,
           useVoiceChannel: arr.useVoiceChannel,
           yearsPlaying: arr.yearsPlaying,
@@ -97,15 +99,15 @@ export class AppService {
     );
   }
 
-  async listDiscord(discordName: string) {
+  async listDiscord(id: string) {
     const ad = await this.prisma.ad.findUnique({
       select: {
         discord: true,
       },
       where: {
-        id: discordName,
+        id,
       },
     });
-    return ad;
+    return ad.discord;
   }
 }
