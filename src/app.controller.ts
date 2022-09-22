@@ -16,6 +16,11 @@ export class AppController {
 
   @Get('/games')
   getGame() {
+    return this.appService.findGameAllLimit();
+  }
+
+  @Get('/games/list')
+  getGameList() {
     return this.appService.findGameAll();
   }
 

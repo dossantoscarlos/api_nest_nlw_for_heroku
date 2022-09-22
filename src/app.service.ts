@@ -4,6 +4,27 @@ import { PrismaService } from './prisma.service';
 @Injectable()
 export class AppService {
   constructor(private prisma: PrismaService) {}
+
+  async findGameAllLimit() {
+    const gameList = [];
+    const limit = 6;
+    const games = await this.prisma.game.findMany({
+      include: {
+        _count: {
+          select: {
+            ads: true,
+          },
+        },
+      },
+    });
+
+    for (let i = 0; i < limit; i++) {
+      gameList.push(games[i]);
+    }
+
+    return gameList;
+  }
+
   async findGameAll() {
     return await this.prisma.game.findMany({
       include: {
