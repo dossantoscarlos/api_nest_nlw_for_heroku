@@ -25,7 +25,7 @@ export class AppController {
   }
 
   @Post('/games/:id/ads')
-  async getAds(
+  async CreateAds(
     @Req() req: Request,
     @Param('id') id: string,
     @Res() response: Response,

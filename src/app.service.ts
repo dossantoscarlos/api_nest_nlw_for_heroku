@@ -53,7 +53,7 @@ export class AppService {
       data: {
         name: body.name,
         discord: body.discord,
-        yearsPlaying: body.yearsPlaying,
+        yearsPlaying: +body.yearsPlaying,
         hourEnd: this.ConvertHoursForMinutes(body.hourEnd),
         hourStart: this.ConvertHoursForMinutes(body.hourStart),
         weekDays: body.weekDays.toString(),
