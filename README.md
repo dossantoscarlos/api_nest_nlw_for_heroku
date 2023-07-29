@@ -1,5 +1,5 @@
 ## Api Criada com Nestjs 
 ### Como instalar:
-  -- Use <code> git clone 'insira_url' </code> , para baixar o codigo.
-  -- Execute <code>npm i </code> para instalar as dependecias.
-  -- Rode o comando com <code> npm run dev </code>, para executar o servidor.
+  - Use <code> git clone 'insira_url' </code> , para baixar o codigo.
+  - Execute <code>npm i </code> para instalar as dependecias.
+  - Rode o comando com <code> npm run dev </code>, para executar o servidor.
